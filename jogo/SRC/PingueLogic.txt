@@ -1,0 +1,4 @@
+﻿PingueLogic
+
+Jogo no estilo runner, segue o genêro eduacativo com circuitos lógicos, o objetivo é coletar as portas que completam o circuito gerado randomicamente, ganhando assim pontos, desviando das portas erradas.
+ 
