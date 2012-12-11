@@ -1,0 +1,215 @@
+\documentclass[fncyhd,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage{indentfirst}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{geometry} 
+\usepackage{amsmath,amssymb,exscale}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{makeidx}
+\makeindex
+\linespread{1.5}
+\renewcommand{\rmdefault}{phv} % Arial
+\renewcommand{\sfdefault}{phv} % Arial
+
+
+\title{\Large Desenvolvimento do jogo Binguelogic}
+\author{\Large Alexandre Oliveira, Hamilton Santana, Marcus Vinicius, Wagner Faim}
+\date{\Large 8 de Novembro de 2012}
+
+
+\begin{document} 
+
+	
+
+	\maketitle
+	
+	
+	\thispagestyle{empty}
+	\pagebreak
+	
+	\thispagestyle{empty}
+	\tableofcontents 
+	\pagebreak
+	
+	
+	\section{\Large Introdução}
+	\large O jogo programado pelo grupo tem como nome Pinguelogic, e foi programado na linguagem C, utilizando a biblioteca gráfica Allegro, na versão 5.0.
+	
+	\large No mês de Agosto, o jogo começou a ser idealizado. Em reuniões feitas com os integrantes do grupo durante esse mês, fases, personagens, cenários, movimentos, colisões, pontuações, 
+	dentre outros elementos foram decididos e um planejamento geral do jogo com todos os detalhes foi feito. Apesar de simples, os recursos oferecida pela biblioteca gráfica Allegro são funcionais, 
+	e com elas sería possivel desenvolver o jogo. O desenvolvimento do jogo foi iniciado no começo do mês de setembro, e se estendeu até o mês de Novembro. Diversas dificuldades 
+	surgiram durante a programação, devido as limitações da linguagem C, que é uma linguagem de baixo nível, e pelo fato do grupo não dominar a linguagem C à princípio. Porém, apesar das dificuldades, o jogo 
+	foi entregue no prazo pré-determinado.
+	
+	\large Em geral, o jogo se baseia em um estilo educacional, voltado para conhecimentos em informática. O jogador necessita ter um prévio conhecimento em circuitos lógicos simples para poder jogar e acumular
+	mais pontos. Apesar de simples, o jogo é funcional.
+	
+	
+	
+	
+	\section {\Large Resumo}
+	\large Pinguelogic é um jogo no estilo runner, desenvolvido pelo grupo, onde se destacam dois personagens robôs: R1, que é o robô protagonista do jogo, guiado pelo jogador,
+	 e o R0, controlado por computador, o vilão do jogo.
+	
+	\large O jogo segue o gênero educativo, utilizando uma matéria básica presente na maioria dos cursos de informática: circuitos lógicos. O jogador ao decorrer de todo jogo se deparará com diversas
+	portas, e precisara de um raciocínio rapido para analisá-las. R0, durante o jogo, persegue o jogador, R1, seu rival, afim de destruí-lo. Para poder fugir do vilão, o jogador precisa coletar
+	portas lógicas que passaram pelo cenário, de forma que, esses coletados sejam compatíveis aos valores de entrada e saída que o jogo já te fornece também durante o jogo. Quanto mais
+	portas coletadas corretamente, mais pontos o jogador acumulará e mais se distanciará do vilão. O jogador também tem a opção de destruir portas que possam atrapalhá-lo, porém, se demorar muito
+	para coletar, perderá o jogo.
+	
+	\large Desde o planejamento até ao fim do projeto, foram usados três mêses e meio, sendo meio mês para o planejamento e três meses para seu desenvolvimento completo, sendo finalizado dentro 
+	do prazo limite, que era de quatro meses. Para o desenvolvimento, foi utilizada somente a linguagem C pura, com o auxilio da biblioteca gráfica Allegro na sua ultima versão (5.0). Com as funções disponíveis
+	no  Allegro foi possível programar o jogo como planejado, porém a obrigatoriedade da utilização da linguagem C  foi um dificultador para o grupo, uma vez que o C é uma linguagem de baixo nível,
+	de recursos limitados.
+	
+	\large Apesar do de todas as dificuldades, o jogo foi finalizado com sucesso, dentre as limitações, cumprindo com a proposta dada no inicio do semestre.
+	
+	
+	
+	
+	\section{\Large Contextualização}
+	\subsection{\large Conceito Geral}
+	\large O jogo Pinguelogic é baseado em um estilo de jogo chamado Runner. Pinguelogic utiliza um conceito de jogo educativo, voltado para a área de informática. O jogo aborda
+	um conteúdo básico presente no inicio de alguns cursos de informática, que é o conceito de circuitos lógicos.
+
+	
+	\subsection{\large Enredo}
+	\large Por ser simples, o jogo não possui um enredo complexo. Em geral, o jogo conta com dois personagens principais: O protagonista, que é um robô controlado pelo jogador, 
+	o robô chamado R1, e seu rival, que o persegue durante o jogo, também robô, com o nome de R0. O jogo tem como cenário uma arte que imita uma placa eletrônica impressa. 
+	O objetivo principal do jogo é montar circuitos lógicos de acordo com os valores de entrada e saída que são dados aleatoriamente ao jogador durante o jogo,para acumular mais
+	pontos e fugir do R0. Caso contrário, o jogador perderá o jogo.
+	
+
+	\subsection{\large Jogabilidade}
+	\large O jogador controla o protagonista do jogo, o R1. Por sua vez, o jogador tem como objetivo fugir do vilão, o R0,e para isso, o jogador coleta durante o jogo
+	portas lógicas que correspondem aos valores de entrada e saídas que são dados de forma aleatória ao jogador, no display principal do jogo. Durante o jogo, diversas portas
+	passam também aleatoriamente pelo personagem, sendo que alguns servem como respostas aos problemas dados e outros não. Cabe ao jogador analisar de forma rápida as portas 
+	que passam pela tela, ver se são compatíveis aos valores dados, e pega-los ou não. 
+	
+	\large Ao acertar o circuito lógico correspondente aos valores de entrada e saída, o jogador acumula mais pontos, e se distancia do vilão. Caso o jogador colete um circuito que 
+	não responde aos valores dados como penalidade perderá pontos e a distancia entre R1 e o vilão R0 também diminuirão, aumentando as chances de perder o jogo. O jogo termina
+	quando o R0 alcança o jogador. 
+	
+	\large Outro detalhe que se deve levar em conta é que o vilão R0 sempre estará cada vez mais próximo do jogador, uma vez que seu movimento é ligeiramente mais rápido em relação 
+	ao do R1, então, caso o jogador não pegue nenhum circuito lógico, o vilão também o alcançará depois de um tempo, terminando o jogo.
+	
+	\large O jogador também pode contar com um recurso que destrói portas que estão a sua frente que possam atrapalhar, utilizando uma arma que R1 possui. 
+	
+	\subsection{\large Controles}
+	\large Os controles que estão disponíveis ao jogador são os seguintes:
+	\begin{itemize}
+		\item Tecla seta para cima: movimenta o R1 para cima;
+		\item Tecla seta para baixo: movimenta o R1 para baixo;
+		\item Tecla barra de espaço: atira.
+	\end{itemize}
+	
+	
+	
+	
+	\section{\Large Desenvolvimento}
+	\subsection {\large Biblioteca gráfica}
+	\large A proposta da criação do jogo foi dada no começo do mês de Agosto, com prazo final no fim de Novembro, onde era apenas permitido o uso da linguagem de baixo nível C.
+	Dentre divesas opções de bibliotecas, a que mais se adequou às necessidades do jogo foi a biblioteca Allegro. A versão utilizada da biblioteca foi a versão 5.0, a mais
+	recente na época.
+	
+	\subsection {\large Ambiente de desenvolvimento}
+	\large Para o desenvolvimento do jogo, foi montado o ambiente de trabalho, tanto na plataforma Windows, como na plataforma Linux, utilizando como IDE o Eclipse CDT. Foi necessario
+	para montar o ambiente de trabalho seguir os seguintes passos:
+	
+	\begin{enumerate}
+		\item Instalar o compilador a ser usado, o MinGW;
+		\item Modificar as variáveis de ambiente;
+		\item Instalar a biblioteca gráfica Allegro, na versão 5.0;
+		\item Compilar e instalar as bibliotecas externas no Allegro (dependencias);
+		\item Compilar o Allegro já com suas dependências instaladas;
+		\item Instalar o Eclipse CDT;
+		\item Configurar a biblioteca Allegro no Eclipse CDT.	
+	\end{enumerate}
+	
+	\subsection{large Base do Jogo}
+	\large Para o desenvolvimento de Pinguelogic foi utilizado um codigo fonte de outro jogo como base, chamado Side Shooter. É um jogo onde o jogador controla uma nave espacial e tem que 
+	destruir diversos obstáculos, que são meteoros. O cenário se movimenta ao lado oposto do jogador, dando o movimento. Ou seja, ambos os personagens ficam estáticos na tela, com pequenos
+	movimentos.
+	
+	\large o jogo que originalmente foi feito em linguagem C++. A principio foi feita a tradução do código do C++ para a linguagem C pura, para poder ser utilizado no projeto.
+	
+	\large Devido às características do jogo Side Shooter serem parecida com a que o grupo planejou para o jogo Pinguelogic, muito de seus recursos foram incorporados ao codigo do jogo, sendo
+	feitas diversas modificações e aperfeiçoamentos de movimentos, colisões, e jogabilidade em geral, fazendo do Pinguelogic um jogo funcional.
+	
+	\large Foram adicionados mais recursos. No lugar dos meteoros foram colocados portas lógicas, e no canto esquerdo inferior esquerdo um display indicando os
+	números de entrada e saída, para que o jogador colete a porta correta durante o jogo. Foi adicionado ao cenário do jogo outro personagem, que persegue o jogador, que é o vilão R0.
+	Quando o vilão consegue alcançar o jogador, será o fim do jogo.
+	
+	\subsection{\large Dificuldades}
+	\large Uma dificuldade eminente em relação à programação foi devido a linguagem utilizada para o desenvolvimento do jogo. Foi permitida apenas o uso da linguagem C pura. A linguagem
+	C possui diversas limitações, por ser uma linguagem de baixo nível. Em relação à biblioteca grafica, o Allegro possui funções simples, porém úteis. Com suas funções foi possível
+	programar o jogo como planejado.
+	
+	\large Outra dificuldade foi o aprendizado. Já que o grupo não tinha conhecimento avançados tanto em C, quanto as funções do Allegro, houve a necessidade de estuda-los a fundo para 
+	depois começar o desenvolvimento.
+
+	
+	
+	
+	\section{\Large Resultados}
+	\large O jogo Pinguelogic desenvolvido na linguagem C, utilizando os recursos oferecidos pela biblioteca Allegro levou cerca de três meses para ser finalizado. O jogo segue o gênero 
+	educativo, voltado para área de informática, circucitos lógicos. O jogo possui dois personagens que são robôs: R1, personagem principal, controlado pelo jogador, e o R0 vilão que persegue
+	o R1 durante o jogo. 
+	
+	\large O principal objetivo do jogo é acumular pontos, se afastando assim, do vilão do jogo, o R0 e para isso, o jogador precisa coletar o maior numero de portas lógicas 
+	possíveis, de acordo com os números aleatórios de entrada e saída que são dados automaticamente pelo computador.  Ao acertar a resposta, o jogador ganhará pontos, e se afastará mais
+	de seu inimigo.
+	
+	\large Se ao acaso o jogador errar muitas vezes as respostas, o vilão R0 se aproximará mais, até que em determinada hora ele o alcançará, terminando o jogo.
+	
+	\large Em geral, o jogo possui três comandos básicos: ir para cima, ir para baixo e atirar. Se no caminho tiver algum circuito poderá atrapalhar o jogador, ele mesmo pode destruí-lo 
+	com a arma que o R1 possui.
+	
+	
+	
+	
+	
+	\section{\Large Conclusões}
+	
+	\large Projeto desenvolvido em linguagem C, utilizando o Allegro 5.0 como biblioteca para jogos.
+
+	\large Tendo resultado esperado pelo grupo de um jogo com uma ótima jogabilidade e movimentação, ensinando os jogadores conceitos básicos de circuito lógico, um diferencial é que grande 
+	parte das imagens foram criada pelo grupo, tornando o jogo ainda mais original.
+	
+	\large Todas as idéias propostas pelo grupo ao começo do trabalho foram cumpridas, dentro do prazo estipulado de quatro meses para o grupo. Seu desenvolvimento foi concluído na ultima semana
+	de novembro. Houve diversas dificuldades em programar o jogo, por conta da obrigatoriedade da utilização da linguagem C.
+	
+	\large Foi utilizado um jogo como base do projeto, chamado Side Shooter, Foram feitas modificações em todo jogo, e implementação de novos recursos, como o segundo personagem e a coleta de portas
+	logicas
+	
+	\large Com o auxilio do coordenador do curso, o grupo pode aperfeiçoar o jogo com sucesso. Em discussões com o mesmo, surgiu a idéia do jogo voltado para o gênero educativo. A escolha do grupo foi
+	por conta do próprio grupo, sendo decididos desde o tema do jogo à sua implementação no jogo.
+	
+	\large Em resumo, com conhecimentos adquiridos ao decorrer do semestre, e com o auxilio das ferramentas utilizadas pelo grupo, como o Eclipse CDT e a biblioteca gráfica Allegro, foi possível finalizar
+	o jogo Pinguelogic dentro do prazo determinado, respeitando todas as limitações dos requisitos do projeto.
+	
+
+	
+	
+	
+	\section{\Large Referências Bibliográficas}
+
+	\begin{thebibliography}{99}
+	
+		\bibitem{catalogue}.\newblock \emph{Allegro 5 Wiki} 
+		disponível em \url{http://wiki.allegro.cc/index.php?title=Allegro_5 } \\
+	
+		\bibitem{catalogue}Geig, Mike.\newblock \emph{2D Game Development Course} 
+		disponível em \url{em http://fixbyproximity.com/2d-game-development-course } \\
+
+		\bibitem{catalogue}Magno, Eryckson.\newblock \emph{Learn-Allegro} 
+		disponível em \url{https://github.com/eryckson/learn-allegro  } \\
+	
+	\end{thebibliography}
+	
+	\end{document}
